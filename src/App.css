@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -19,4 +20,9 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
