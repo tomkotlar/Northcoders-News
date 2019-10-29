@@ -9,7 +9,7 @@ export default class Nav extends Component {
 
   fetchTopics = () => {
     api.getTopics().then(items => {
-      this.setState({ topics: items });
+      this.setState({ topics: items});
     });
   };
 
@@ -20,16 +20,13 @@ export default class Nav extends Component {
     const { topics } = this.state;
     return (
       <nav>
-      
         {topics.map(element => (
-          <Link to="" key={element.slug}>
+          <Link to={`/articles/topic/${element.slug}`} key={element.slug}>
             {element.slug[0].toUpperCase() + element.slug.slice(1)}
           </Link>
         ))}
-        <Link to=''>More</Link>
-
-        {/* code | cooking | football | more
-               {this.props.children} */}
+        <Link to="/articles/topic/more">More</Link>
+        {/* render list of the articlse */}
       </nav>
     );
   }

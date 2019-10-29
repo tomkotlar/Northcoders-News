@@ -8,12 +8,17 @@ export const getTopics = () => {
     return request
       .get(`/topics`)
       .then(response => response.data.topics)
-      .catch(err => console.dir(err));
+     
   };
 
-export const getArticles = () => {
+export const getArticles = (topic) => {
     return request
-      .get(`/articles`)
+      .get(`/articles`, {params: {topic}})
       .then(response => response.data.articles)
-      .catch(err => console.dir(err));
+      
+  };
+export const getArticlesById = (id) => {
+    return request
+      .get(`/articles/${id}`)
+      .then(response => response.data.article)
   };
