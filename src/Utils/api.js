@@ -11,9 +11,9 @@ export const getTopics = () => {
      
   };
 
-export const getArticles = (topic) => {
+export const getArticles = (topic, sort_by, order_by) => {
     return request
-      .get(`/articles`, {params: {topic}})
+      .get(`/articles`, {params: {topic, sort_by, order_by}})
       .then(response => response.data.articles)
       
   };

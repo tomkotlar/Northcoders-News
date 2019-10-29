@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../Utils/api";
 import Nav from "./Nav";
 import ArticleCard from "./ArticleCard";
+import SortArticlse from "./SortArticlse";
 
 export default class Articles extends Component {
   state = {
@@ -10,9 +11,10 @@ export default class Articles extends Component {
   };
 
   fetchArticles = () => {
-    const {topic} = this.props
+    const {topic, sort_by, order_by} = this.props
+    console.log(this.props.topic)
     api
-      .getArticles(topic)
+      .getArticles(topic, sort_by, order_by)
       .then(itmes => this.setState({ articles: itmes, isLoading: false }));
   };
 
@@ -21,6 +23,7 @@ export default class Articles extends Component {
   }
 
   componentDidUpdate(prevProprs, prevState) {
+    console.log(prevProprs)
     const chooseTopic = (prevProprs.topic !== this.props.topic)
     if (chooseTopic) 
     this.fetchArticles()
@@ -35,6 +38,7 @@ export default class Articles extends Component {
             <Nav />
 
             <h1>Articels</h1>
+            <SortArticlse updateArticles={this.componentDidUpdate}/>
             <ArticleCard articles={articles} />
           </div>
         )}
