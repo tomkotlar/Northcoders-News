@@ -22,3 +22,10 @@ export const getArticlesById = (id) => {
       .get(`/articles/${id}`)
       .then(response => response.data.article)
   };
+
+  export const getComments = id => {
+    return request
+      .get(`/articles/${id}/comments`)
+      .then(response => response.data.comments)
+  };
+

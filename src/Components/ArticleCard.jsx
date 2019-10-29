@@ -10,7 +10,10 @@ export default function ArticleCard(props) {
         <p key={element.title}>
           <Link to={`/articles/${element.article_id}`}>
         
-            {element.title} {element.article_id}
+         <b> id: {element.article_id} </b>  
+          <i>title: {element.title} </i>
+       
+         <b> comments:{element.comment_count}  </b>  
           </Link>
         </p>
       ))}

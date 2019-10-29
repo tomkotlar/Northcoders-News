@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import * as api from "../Utils/api";
 import {Link} from "@reach/router"
+import Comments from "./Comments";
 
 
 export default class ArticleInfo extends Component {
   state = {
-    singleArticle: {}
+    singleArticle: {},
+    viewComments: false, 
   };
 
   componentDidMount() {
@@ -19,8 +21,16 @@ export default class ArticleInfo extends Component {
       .then(items => this.setState({ singleArticle: items }));
   };
 
+  handleClick = () => {
+    this.setState(currentState => {
+      return { viewComments: !currentState.viewComments}
+    })
+  }
+
+
   render() {
-    const { singleArticle } = this.state;
+    const { singleArticle, viewComments } = this.state;
+    const button = viewComments ? "Hide Comments" : 'Show Comments'
     return (
       <main>
         <h1>Single Article</h1>
@@ -33,6 +43,15 @@ export default class ArticleInfo extends Component {
         <p> {singleArticle.topic} </p>
         <p>{singleArticle.votes}</p>
        <Link to='/articles'> <button> Back</button></Link>
+       <br/>
+       
+       <button  onClick={() => this.handleClick()}> {button}</button>
+      
+
+      {viewComments &&
+        <Comments  article_id={this.props.article_id}/>
+      }
+
       </main>
     );
   }

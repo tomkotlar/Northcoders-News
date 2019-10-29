@@ -4,32 +4,46 @@ import Nav from "./Nav";
 import ArticleCard from "./ArticleCard";
 import SortArticlse from "./SortArticlse";
 
+
 export default class Articles extends Component {
   state = {
     articles: [],
-    isLoading: true
+    isLoading: true,
+    sort_by: 'created_at',
+    order_by: '',
   };
-
+  
   fetchArticles = () => {
-    const {topic, sort_by, order_by} = this.props
+    const {topic} = this.props
+    const {sort_by, order_by} = this.state
     console.log(this.props.topic)
     api
       .getArticles(topic, sort_by, order_by)
       .then(itmes => this.setState({ articles: itmes, isLoading: false }));
   };
-
   componentDidMount() {
     this.fetchArticles();
   }
 
+      handleChange = (event) => {
+        const {name, value} = event.target
+        this.setState({ [name]: value })
+    
+      }
+
+  
   componentDidUpdate(prevProprs, prevState) {
     console.log(prevProprs)
     const chooseTopic = (prevProprs.topic !== this.props.topic)
-    if (chooseTopic) 
+    const chooseOrder = (prevState.order_by !== this.state.order_by)
+    const chooseSort = (prevState.sort_by !== this.state.sort_by)
+    if (chooseTopic || chooseOrder || chooseSort) 
     this.fetchArticles()
   }
+
+  
   render() {
-    const { articles, isLoading } = this.state;
+    const { articles, isLoading, order_by, sort_by } = this.state;
     console.log(this.state.articles);
     return (
       <main>
@@ -38,7 +52,7 @@ export default class Articles extends Component {
             <Nav />
 
             <h1>Articels</h1>
-            <SortArticlse updateArticles={this.componentDidUpdate}/>
+            <SortArticlse   order_by={order_by} sort_by={sort_by} handleChange={this.handleChange}/>
             <ArticleCard articles={articles} />
           </div>
         )}

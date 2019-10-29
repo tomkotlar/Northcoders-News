@@ -26,7 +26,7 @@ export default class Nav extends Component {
           </Link>
         ))}
         <Link to="/articles/topic/more">More</Link>
-        {/* render list of the articlse */}
+        {/* render list of topics */}
       </nav>
     );
   }

@@ -1,59 +1,44 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class SortArticlse extends Component {
-  state = {
-    sort_by: "",
-    order_by: ""
-  };
+export default function SortArticlse(props) {
+  return (
+    <div>
+      <h1>i am sorting articles</h1>
 
+      <form>
+        <label htmlFor="sort_by"> Filter </label>
+        <select
+          name="sort_by"
+          onChange={props.handleChange}
+          value={props.sort_by}
+        >
+          <option value="created_at">Date</option>
+          <option value="comment_count">Comments</option>
+          <option value="votes">Votes</option>
+        </select>
 
-  handleChange = (event) => {
-    const {name, value} = event.target
-    this.setState({ [name]: value })
-  }
+        <label htmlFor="order_by">
+          desc
+          <input
+            type="radio"
+            name="order_by"
+            checked={props.order_by === "desc"}
+            value="desc"
+            onChange={props.handleChange}
+          />
+        </label>
 
-  render() {
-    const { sort_by, order_by } = this.state;
-    return (
-      <div>
-        <h1>i am sorting articles</h1>
-
-        <form action="sort_by">
-          <label htmlFor="sort_by"> Filter </label>
-          <select
-            name="sort_by"
-            id="sort"
-            value={sort_by}
-            onChange={this.handleChange}
-          >
-            <option value="created_at">Date</option>
-            <option value="comment_count">Comments</option>
-            <option value="votes">Votes</option>
-          </select>
-
-          <label htmlFor="order_by">
-            desc
-            <input
-              type="radio"
-              name="order_by"
-              checked={order_by === 'desc'}
-              value='desc'
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <label htmlFor="order_by">
-            asc
-            <input
-              type="radio"
-              name="order_by"
-              value= 'asc'
-              checked={order_by === 'asc'}
-              onChange={this.handleChange}
-            />
-          </label>
-        </form>
-      </div>
-    );
-  }
+        <label htmlFor="order_by">
+          asc
+          <input
+            type="radio"
+            name="order_by"
+            value="asc"
+            checked={props.order_by === "asc"}
+            onChange={props.handleChange}
+          />
+        </label>
+      </form>
+    </div>
+  );
 }
