@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SortArticlse(props) {
+export default function SortArticles(props) {
   return (
     <div>
       <h1>i am sorting articles</h1>

@@ -23,9 +23,14 @@ export const getArticlesById = (id) => {
       .then(response => response.data.article)
   };
 
-  export const getComments = id => {
+export const getComments = id => {
     return request
       .get(`/articles/${id}/comments`)
       .then(response => response.data.comments)
   };
 
+  export const postComment = (id, username, body)=> {
+    return request
+      .post(`/articles/${id}/comments`, {username, body})
+      .then(response => response.data.comment)
+  };

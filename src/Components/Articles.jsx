@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as api from "../Utils/api";
 import Nav from "./Nav";
 import ArticleCard from "./ArticleCard";
-import SortArticlse from "./SortArticlse";
+import SortArticles from "./SortArticles";
 
 
 export default class Articles extends Component {
@@ -17,9 +17,8 @@ export default class Articles extends Component {
     const {topic} = this.props
     const {sort_by, order_by} = this.state
     console.log(this.props.topic)
-    api
-      .getArticles(topic, sort_by, order_by)
-      .then(itmes => this.setState({ articles: itmes, isLoading: false }));
+    api.getArticles(topic, sort_by, order_by)
+       .then(itmes => this.setState({ articles: itmes, isLoading: false }));
   };
   componentDidMount() {
     this.fetchArticles();
@@ -52,7 +51,7 @@ export default class Articles extends Component {
             <Nav />
 
             <h1>Articels</h1>
-            <SortArticlse   order_by={order_by} sort_by={sort_by} handleChange={this.handleChange}/>
+            <SortArticles   order_by={order_by} sort_by={sort_by} handleChange={this.handleChange}/>
             <ArticleCard articles={articles} />
           </div>
         )}

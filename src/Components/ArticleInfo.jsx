@@ -4,6 +4,7 @@ import {Link} from "@reach/router"
 import Comments from "./Comments";
 
 
+
 export default class ArticleInfo extends Component {
   state = {
     singleArticle: {},
@@ -46,12 +47,12 @@ export default class ArticleInfo extends Component {
        <br/>
        
        <button  onClick={() => this.handleClick()}> {button}</button>
-      
 
       {viewComments &&
         <Comments  article_id={this.props.article_id}/>
       }
 
+     
       </main>
     );
   }
