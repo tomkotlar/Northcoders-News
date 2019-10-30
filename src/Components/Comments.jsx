@@ -19,16 +19,29 @@ export default class Comments extends Component {
     this.fetchComments();
   }
 
-  addForm = commnet => {
+  addForm = comment => {
     this.setState(currentState => {
-      return { comments: [commnet, ...currentState.comments] };
+      return { comments: [comment, ...currentState.comments] };
     });
   };
+
+
+  handleDelete = (commnet_id) => {
+      console.log(commnet_id, "another leason")
+    api.deleteComment(commnet_id)
+        
+     const updated = this.state.comments.filter(element => 
+        // console.log(element.comment_id, "->" ,commnet_id)
+         element.comment_id !== commnet_id)
+
+        
+        this.setState({comments: updated})
+  }
 
   render() {
     const { comments } = this.state;
     if (!comments.length) return "isLoading..."
-    
+
     return (
       <main>
         <button> Post comment</button>
@@ -45,7 +58,8 @@ export default class Comments extends Component {
             <b> {new Date(comment.created_at).toDateString()} </b>
             {comment.body}
 
-            <button>Delete</button>
+            <button onClick={() => this.handleDelete(comment.comment_id)}>Delete</button>
+             {/* check function expression  vs function declarations */}
           </p>
         ))}
       </main>

@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import * as api from "../Utils/api";
+import React, { Component } from "react"
+import * as api from "../Utils/api"
 
 export default class PostCommentForm extends Component {
   state = {
     username: "jessjelly",
     body: ""
-  };
+  }
 
   handleChange = event => {
-    const { value, name } = event.target;
-    this.setState({ [name]: value });
+    const { value, name } = event.target
+    this.setState({ [name]: value })
     // [name] - is the name of input field you updating
     // value  -  is the value whis is updated from the state
     // in react docs they naming the input field as value which is updated
-  };
+  }
 
   handleFormSubmit = event => {
-    const { article_id } = this.props;
-    const { username, body } = this.state;
+    const { article_id } = this.props
+    const { username, body } = this.state
     api.postComment(article_id, username, body).then(response => {
       this.props.addForm(response)
-    });
-    event.preventDefault();
+    })
+    event.preventDefault()
     // console.log(response))
 
-    this.setState({ body: "" });
-  };
+    this.setState({ body: "" })
+  }
 
   render() {
     return (
@@ -54,6 +54,6 @@ export default class PostCommentForm extends Component {
           <button>Publish</button>
         </form>
       </React.Fragment>
-    );
+    )
   }
 }
