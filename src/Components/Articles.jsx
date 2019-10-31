@@ -3,6 +3,7 @@ import * as api from "../Utils/api";
 import Nav from "./Nav";
 import ArticleCard from "./ArticleCard";
 import SortArticles from "./SortArticles";
+import SingleArticleView from "./SingleArticleView";
 
 
 export default class Articles extends Component {
@@ -44,18 +45,23 @@ export default class Articles extends Component {
   render() {
     const { articles, isLoading, order_by, sort_by } = this.state;
     console.log(this.state.articles);
+
     return (
       <main>
-        {isLoading ? ("loading...") : (
-          <div>
-            <Nav />
+          {isLoading ? ("loading...") : (
+            <div>
+              <Nav />
 
-            <h1>Articels</h1>
-            <SortArticles   order_by={order_by} sort_by={sort_by} handleChange={this.handleChange}/>
-            <ArticleCard articles={articles} />
-          </div>
-        )}
+              <h1>Articels</h1>
+              <SingleArticleView   article={articles[0]} />
+              <SortArticles   order_by={order_by} sort_by={sort_by} handleChange={this.handleChange}/>
+            
+              <ArticleCard articles={articles} />
+            </div>
+          )}
       </main>
     );
   }
 }
+
+

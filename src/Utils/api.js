@@ -34,3 +34,13 @@ export const deleteComment = (id) => {
     .delete(`/comments/${id}`)
    
 }
+
+export const patchVote = (id, inc_votes, type) => {
+  console.log(id, inc_votes)
+  return request
+    .patch(`/${type}/${id}`, { inc_votes })
+    .then(response => 
+       //console.log(response.data.comment.votes))
+        response.data.comment)
+}
+

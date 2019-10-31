@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../Utils/api";
 import {Link} from "@reach/router"
 import Comments from "./Comments";
+import Vote from "./Vote";
 
 
 
@@ -42,7 +43,12 @@ export default class ArticleInfo extends Component {
         <p> {singleArticle.comment_count}</p>
         <p> {new Date(singleArticle.created_at).toDateString()}</p>
         <p> {singleArticle.topic} </p>
-        <p>{singleArticle.votes}</p>
+
+
+        {/* <p>{singleArticle.votes}</p> */}
+      <Vote  type='articles' votes={singleArticle.votes}  id={this.props.article_id} />
+
+<pre/>
        <Link to='/articles'> <button> Back</button></Link>
        <br/>
        
