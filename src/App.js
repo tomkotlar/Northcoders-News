@@ -3,11 +3,11 @@ import './App.css';
 
 import {Router} from '@reach/router'
 import Header from './Components/Header';
-// import Nav from './Components/Nav';
+//  import Nav from './Components/Nav';
 import Articles from './Components/Articles';
 import Home from './Components/Home';
 import ArticleInfo from './Components/ArticleInfo';
-
+import  SingleUser from './Components/SingleUser'
 function App() {
   return (
     <div className="App">
@@ -18,7 +18,10 @@ function App() {
      <Home path='/'/>
      <Articles  path='articles' />
      <Articles  path='articles/topic/:topic' />
+
      <ArticleInfo  path='articles/:article_id'/>
+
+     <SingleUser path='users/:username'/>
     </Router>
     </div>
   );

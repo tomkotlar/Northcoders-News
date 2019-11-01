@@ -39,6 +39,7 @@ export default function SortArticles(props) {
           />
         </label>
       </form>
+      <hr/>
     </div>
   );
 }

@@ -8,11 +8,13 @@ export const getTopics = () => {
   return request.get(`/topics`).then(response => response.data.topics)
 }
 
-export const getArticles = (topic, sort_by, order_by) => {
+export const getArticles = (topic, sort_by, order_by, username) => {
   return request
-    .get(`/articles`, { params: { topic, sort_by, order_by } })
+    .get(`/articles`, { params: { topic, sort_by, order_by, author: username } })
     .then(response => response.data.articles)
 }
+
+
 export const getArticlesById = id => {
   return request.get(`/articles/${id}`).then(response => response.data.article)
 }
