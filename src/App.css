@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
   
 }
@@ -22,7 +22,83 @@
   color: #09d3ac;
 }
 
+
+} */
+
 img {
   max-width: 100%;
   height: auto;
+} 
+
+
+#stage {
+	background: url('Img/typewriter.jpg') center center no-repeat;
+	background-size: cover;
+	color: white;
+	height: 100%;
+	width: 100%;
+	display: flex;
+  align-items: center;
+
+}
+
+
+#stage-caption {
+
+  
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+#stage-caption h1 {
+	padding-top: 150px;
+}
+
+
+
+ .feature-content {
+	padding: 8rem 0;
+	overflow: hidden;
+}
+
+/* .feature-content img {
+  margin-bottom: -2rem;
+
+} */
+
+
+
+.feature-dark {
+	background: #262F36;
+  color: white;
+
+}
+
+.feature-dark h2 {
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and ( min-width : 900px) {
+
+	.feature-content {
+		display: flex;
+		align-items: center;
+	}	
 }
