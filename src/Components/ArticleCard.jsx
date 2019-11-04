@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "@reach/router"
 import * as api from "../Utils/api"
 import SortArticles from "./SortArticles"
-// import SingleArticleView from "./SingleArticleView"
+ import SingleArticleView from "./SingleArticleView"
 
 export default class ArticleCard extends Component {
   state = {
@@ -43,7 +43,7 @@ export default class ArticleCard extends Component {
     if (!articles.length) return "isloadning...."
     return (
       <div>
-        {/* <SingleArticleView article={articles[0]} /> */}
+        <SingleArticleView article={articles[0]} />
 
         <SortArticles
           order_by={order_by}
