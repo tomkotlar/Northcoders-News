@@ -2,12 +2,8 @@ import React, { Component } from "react"
 import { Link } from "@reach/router"
 import * as api from "../Utils/api"
 import SortArticles from "./SortArticles"
-<<<<<<< HEAD
  import SingleArticleView from "./SingleArticleView"
-=======
-import Err404Page from './Err404Page'
-// import SingleArticleView from "./SingleArticleView"
->>>>>>> dcd1fbaa4cd8be0ff74955400d267358814db9aa
+ import Err404Page from './Err404Page'
 
 export default class ArticleCard extends Component {
   state = {
@@ -35,6 +31,7 @@ export default class ArticleCard extends Component {
   }
 
   handleChange = event => {
+    console.log('sorting' ,event.target.value)
     const { name, value } = event.target
     this.setState({ [name]: value })
   }
@@ -62,6 +59,9 @@ export default class ArticleCard extends Component {
         />
 
         <h1> Article Card</h1>
+
+
+
         {this.state.articles.map((element, i) => (
           <React.Fragment>
             <p key={element.article_id}>
@@ -72,6 +72,8 @@ export default class ArticleCard extends Component {
                 <b> comments:{element.comment_count} </b>
               </Link>
             </p>
+
+
 
             <Link to={`/users/${element.author}`}>
               <p key={element.article_id}>

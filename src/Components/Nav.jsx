@@ -3,6 +3,7 @@ import * as api from "../Utils/api";
 import { Link } from "@reach/router";
 import { Menu } from "semantic-ui-react";
 
+
 export default class Nav extends Component {
   state = {
     topics: []
@@ -21,6 +22,8 @@ export default class Nav extends Component {
   render() {
     const { topics } = this.state;
     return (
+
+     
       <Menu text style={{ paddingLeft: "20px" }}>
         {topics.map(element => (
           <Menu.Item
@@ -31,6 +34,7 @@ export default class Nav extends Component {
           />
         ))}
 
+      
         {/* {topics.map(element => (
                   <Link to={`/articles/topic/${element.slug}`} key={element.slug}>
                     {element.slug[0].toUpperCase() + element.slug.slice(1)}

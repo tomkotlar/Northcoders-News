@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+
 
 export default function SortArticles(props) {
   return (
@@ -39,7 +40,7 @@ export default function SortArticles(props) {
           />
         </label>
       </form>
-      <hr/>
+      <hr />
     </div>
-  );
+  )
 }

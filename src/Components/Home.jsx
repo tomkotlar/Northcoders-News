@@ -51,13 +51,13 @@ export default function Home() {
         </Container>
       </Container>
 
-      <Container style={{ margin: 50 }} id="feature-one" fluid>
+      <Container style={{ margin: 30 }} id="feature-one" fluid>
         <Grid stackable divided="vertically">
           <Grid.Row columns={2}>
             <Grid.Column className="feauture-content">
               <iframe
                 width="100%"
-                title="video"
+                title="northcoders stories"
                 height="350"
                 src="https://www.youtube.com/embed/aLWK9E8AMJc"
                 frameBorder="0"

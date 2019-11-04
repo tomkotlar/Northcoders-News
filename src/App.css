@@ -32,7 +32,7 @@ img {
 
 
 #stage {
-	background: url('Img/typewriter.jpg') center center no-repeat;
+	/* background: url('Img/typewriter.jpg') center center no-repeat; */
 	background-size: cover;
 	color: white;
 	height: 100%;
@@ -44,8 +44,6 @@ img {
 
 
 #stage-caption {
-
-  
   text-align: center;
   position: absolute;
   top: 20%;
