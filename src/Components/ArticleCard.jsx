@@ -30,11 +30,18 @@ export default class ArticleCard extends Component {
     this.fetchArticles()
   }
 
-  handleChange = event => {
-    console.log('sorting' ,event.target.value)
-    const { name, value } = event.target
-    this.setState({ [name]: value })
+  // handleChange = (event) => {
+  //   console.dir(event)
+  //    const { name, value } = event.target
+  //    this.setState({ [name]: value })
+  // }
+  handleChange = (sort_by) => {
+    const { order_by} = this.state
+     this.setState({sort_by, order_by})
   }
+
+
+
 
   componentDidUpdate(prevProprs, prevState) {
     // console.log(prevState)
