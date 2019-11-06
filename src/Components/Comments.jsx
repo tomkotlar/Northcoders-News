@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import * as api from "../Utils/api"
 import PostCommentForm from "./PostCommentForm"
 import Vote from "./Vote"
+import {Comment, Header, Icon, Segment} from 'semantic-ui-react'
 
 export default class Comments extends Component {
   state = {
@@ -54,21 +55,52 @@ export default class Comments extends Component {
     // if (username === 'jessjelly') 
     return (
       <main>
-       
+   
         <PostCommentForm
           article_id={this.props.article_id}
           addForm={this.addForm}
         />
-        {comments.map(comment => (
-          <p key={comment.comment_id}>
-            {comment.comment_id}
-            <b>{comment.author} </b>
-            {comment.article_id}
-         
-            <b> {new Date(comment.created_at).toDateString()} </b>
-            {comment.body}
 
-            {/* <b> {comment.votes} </b>    */}
+<pre/>
+<pre/>
+<pre/>
+<pre/>
+<Header as='h3' dividing>
+      Comments  
+    </Header>
+
+        {comments.map(comment => (
+         
+         
+         
+           
+
+            <Comment.Group key={comment.comment_id} style={{paddingLeft: '15px'}} >
+    
+
+            <Segment raised color='violet' > 
+    <Comment>
+      <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' />
+      <Comment.Content>
+        <Comment.Author>{comment.author}</Comment.Author>
+        <Comment.Metadata>
+          <div>{new Date(comment.created_at).toDateString()}</div>
+          <div>
+            <Icon name='star' />5 Faves 
+         
+            <Icon name='heart' />5 Faves
+    
+          </div>
+        </Comment.Metadata>
+        <Comment.Text style={{ paddingTop: "10px" }}>
+        {comment.body}
+        </Comment.Text>
+      </Comment.Content>
+    </Comment>
+    </Segment>
+
+
+        
 
 {/* conditional logic to show delete button just for log in user match the comment author with the state user */}
             { comment.author === username &&  
@@ -78,9 +110,11 @@ export default class Comments extends Component {
             }
             <Vote  type="comments" id={comment.comment_id} votes={comment.votes}/>
             {/* check function expression  vs function declarations */}
-          </p>
+            </Comment.Group>
+        
         ))}
       </main>
+      
     )
   }
 }
