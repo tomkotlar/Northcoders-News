@@ -1,27 +1,38 @@
-import React, { Component } from "react"
-import * as api from "../Utils/api"
+import React, { Component } from "react";
+import * as api from "../Utils/api";
+import { Label, Icon } from "semantic-ui-react";
 
 export default class Vote extends Component {
   state = {
     likes: 0
-  }
+  };
 
   handleLike = likes => {
-    const { id, type} = this.props
-    api.patchVote(id, likes, type )
+    const { id, type } = this.props;
+    api.patchVote(id, likes, type);
     this.setState(currentState => {
-      return { likes: currentState.likes + 1 }
-    })
-  }
+      return { likes: currentState.likes + 1 };
+    });
+  };
 
   render() {
-    const { votes } = this.props
-    console.log(this.state.likes)
+    const { votes } = this.props;
+    console.log(this.state.likes);
     return (
       <React.Fragment>
-        {votes + this.state.likes}
-        <button  disabled={this.state.likes  === 0 ? false : true } onClick={() => this.handleLike(1)}>Like</button>
+        <Label
+         size="tiny"
+         basic
+          as="button"
+          color="purple"
+          disabled={this.state.likes === 0 ? false : true}
+          onClick={() => this.handleLike(1)}
+        >
+          <Icon name="heart" color='pink' />
+          {votes + this.state.likes}
+          <Label.Detail>Like</Label.Detail>
+        </Label>
       </React.Fragment>
-    )
+    );
   }
 }

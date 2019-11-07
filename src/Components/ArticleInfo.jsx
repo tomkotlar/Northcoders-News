@@ -3,10 +3,10 @@ import * as api from "../Utils/api";
 import { Link } from "@reach/router";
 import Comments from "./Comments";
 import Vote from "./Vote";
-import employee from "../Img/employee.png";
+import man from "../Img/man.png";
 import random from "../Img/random.jpg";
 
-import { Container, Header, Image, Grid, Icon } from "semantic-ui-react";
+import { Container, Header, Image, Grid, Icon, Button, } from "semantic-ui-react";
 
 export default class ArticleInfo extends Component {
   state = {
@@ -41,7 +41,7 @@ export default class ArticleInfo extends Component {
 
          
           <Header size="tiny" as={Link} to="/users/jessjelly" floated="left">
-              <Image circular src={employee} />
+              <Image circular src={man} />
               <Header.Content>
                 {singleArticle.author}
                 <Header.Subheader>
@@ -54,7 +54,6 @@ export default class ArticleInfo extends Component {
           <Image
             src={random}
             fluid
-          
             centered
             alt="https://www.freepik.com/free-photos-vectors/infographic"
             style={{ paddingTop: "20px" }}
@@ -109,30 +108,45 @@ export default class ArticleInfo extends Component {
             </Grid.Row>
           </Grid>
 
-          <Container style={{ paddingTop: "30px" }} >
-            <Header size="tiny" as={Link} to="/users/jessjelly">
-              <Image circular src={employee} />
+          <Container style={{ paddingTop: "30px", paddingLeft: '10px' }} >
+            <Header size="tiny" as={Link} to={`/users/${singleArticle.author}`}>
+              <Image circular src={man} />
               <Header.Content>
                 {singleArticle.author}
                 <Header.Subheader>
                   get excited about {singleArticle.topic}
                 </Header.Subheader>
+
               </Header.Content>
             </Header>
-          </Container>
-    
-        </Container>
+    <div style={{display: 'flex', float: 'right', paddingTop: "5px", paddingRight: '10px'}}>
 
-
-        <Vote
+                <Vote 
           type="articles"
           votes={singleArticle.votes}
           id={this.props.article_id}
         />
+    </div>
+          </Container>
+        </Container>
 
-        <pre />
 
-        <button onClick={() => this.handleClick()}> {button}</button>
+
+       
+       
+        <Grid centered style={{ maxWidth: '800px',  margin: "auto" }}>
+       
+        <Grid.Column stretched >
+          <Button  basic 
+          color='violet' 
+          compact 
+          content={button} 
+          size='medium' 
+          onClick={() => this.handleClick()} 
+          />
+        </Grid.Column>
+      </Grid>
+       
 
         {viewComments && <Comments article_id={this.props.article_id} />}
       </React.Fragment>
