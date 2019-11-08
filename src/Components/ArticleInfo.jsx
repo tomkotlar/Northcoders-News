@@ -5,13 +5,14 @@ import Comments from "./Comments";
 import Vote from "./Vote";
 import man from "../Img/man.png";
 import random from "../Img/random.jpg";
-
+import Err404Page from '../Components/Err404Page'
 import { Container, Header, Image, Grid, Icon, Button, } from "semantic-ui-react";
 
 export default class ArticleInfo extends Component {
   state = {
     singleArticle: {},
-    viewComments: false
+    viewComments: false,
+    err: null
   };
 
   componentDidMount() {
@@ -22,7 +23,16 @@ export default class ArticleInfo extends Component {
     //   props need be same as in router
     api
       .getArticlesById(this.props.article_id)
-      .then(items => this.setState({ singleArticle: items }));
+      .then(items => {
+        if (items.article_id){
+          this.setState({ singleArticle: items })
+          console.log('check')
+      
+      } else {
+        this.setState({err: "article not found"})
+      }
+        
+      }).catch(err =>    this.setState({err}))
   };
 
   handleClick = () => {
@@ -32,7 +42,8 @@ export default class ArticleInfo extends Component {
   };
 
   render() {
-    const { singleArticle, viewComments } = this.state;
+    const { singleArticle, viewComments, err } = this.state;
+    if (err) return <Err404Page/>
     const button = viewComments ? "Hide Comments" : "Show Comments";
     return (
       <React.Fragment>

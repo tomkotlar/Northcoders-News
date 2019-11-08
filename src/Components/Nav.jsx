@@ -7,6 +7,7 @@ import { Menu } from "semantic-ui-react";
 export default class Nav extends Component {
   state = {
     topics: []
+    // add error page
   };
 
   fetchTopics = () => {

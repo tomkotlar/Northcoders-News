@@ -20,7 +20,7 @@ export default class ArticleCard extends Component {
 
     api
       .getArticles(topic, sort_by, order_by, username)
-      .then(items => this.setState({ articles: items, isLoading: false }))
+      .then(items => {this.setState({ articles: items, isLoading: false })})
       .catch(err => {
         this.setState({err: err.response.data.msg})
       })
