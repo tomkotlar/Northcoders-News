@@ -24,11 +24,12 @@ export default class Vote extends Component {
          size="tiny"
          basic
           as="button"
-          color="purple"
+          color= 'purple'
           disabled={this.state.likes === 0 ? false : true}
           onClick={() => this.handleLike(1)}
+          style={{cursor: 'pointer'}}
         >
-          <Icon name="heart" color='pink' />
+          <Icon name="heart" color={this.state.likes === 0 ? 'purple' : 'pink'} />
           {votes + this.state.likes}
           <Label.Detail>Like</Label.Detail>
         </Label>

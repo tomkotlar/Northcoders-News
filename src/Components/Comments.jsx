@@ -8,7 +8,7 @@ import {
   Header,
   Icon,
   Segment,
-  Label
+  Label,
 } from "semantic-ui-react";
 
 export default class Comments extends Component {
@@ -69,9 +69,13 @@ export default class Comments extends Component {
         <pre />
         <pre />
         <pre />
-        <Header as="h3" dividing>
-          Comments
-        </Header>
+
+     
+        <Header as="h3" dividing style={{ maxWidth: "700px", margin: '20px', marginLeft: 'auto', marginRight: 'auto'}} 
+        content='  Comments'
+        />
+        
+
 
         {comments.map(comment => (
           <Comment.Group

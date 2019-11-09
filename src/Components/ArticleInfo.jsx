@@ -105,6 +105,7 @@ export default class ArticleInfo extends Component {
                   onClick={() => this.handleClick()}
                   content={singleArticle.comment_count}
                   color="pink"
+                  style={{cursor: 'pointer'}}
                 />
               </Grid.Column>
 
@@ -145,7 +146,11 @@ export default class ArticleInfo extends Component {
 
        
        
-        <Grid centered style={{ maxWidth: '800px',  margin: "auto" }}>
+        <Grid centered style={{ maxWidth: '500px',  display: "block",
+  marginLeft: 'auto',
+  marginRight: "auto",
+  paddingTop: '20px'
+   }}>
        
         <Grid.Column stretched >
           <Button  basic 

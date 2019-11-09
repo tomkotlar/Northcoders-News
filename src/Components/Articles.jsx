@@ -9,7 +9,7 @@ export default function Articles(props) {
       <Nav />
       {/* <SingleArticleView articles={articles[0]} /> */}
 
-      <h1> Title: All Articles</h1>
+      
       <ArticleCard topic={props.topic} />
     </main>
   )

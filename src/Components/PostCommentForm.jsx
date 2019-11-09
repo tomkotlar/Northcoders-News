@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import * as api from "../Utils/api"
+import { Form, TextArea,Label} from "semantic-ui-react";
+
 
 export default class PostCommentForm extends Component {
   state = {
@@ -29,31 +31,51 @@ export default class PostCommentForm extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>comment form</h1>
-        <form action="cubmit comment" onSubmit={this.handleFormSubmit}>
-          <label>
-            Username:
-            <input
-              type="text"
-              vlaue={this.state.username}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Comment:
-            <textarea
+    
+    
+        <Form action="submit comment" 
+        onSubmit={this.handleFormSubmit} 
+        style={{ maxWidth: '500px',  display: "block",
+        margin:' 5%',
+        marginLeft: 'auto',
+        marginRight: "auto",
+        paddingTop: '10px'
+     }} >
+          
+          <Form.Field>
+          <Label as='a' image >
+      <img src='https://react.semantic-ui.com/images/avatar/small/stevie.jpg' 
+     alt='avatar'
+      
+      />
+      {this.state.username}
+    </Label>
+            <TextArea
               required
               name="body"
               value={this.state.body}
               placeholder={"Write a response ..."}
+              style={{marginTop: "10px"}}
               onChange={this.handleChange}
-            />
-          </label>
 
-          <button>Publish</button>
-        </form>
-      </React.Fragment>
+              
+            />
+         
+         <Form.Button  
+          floated='right' 
+          basic color='violet'
+          size='tiny'  
+          content='Submit'
+          compact
+          style={{margin: '10px'}} />
+        
+        
+       
+          </Form.Field>
+       
+          
+        </Form>
+     
     )
   }
 }
