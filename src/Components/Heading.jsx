@@ -5,10 +5,18 @@ import employee from "../Img/employee.png";
 
 export default function Heading() {
   return (
-    <Menu secondary >
+    <Menu
+      secondary
+      style={{
+        maxWidth: "1400px",
+        margin: "10px",
+        marginLeft: "auto",
+        marginRight: "auto"
+      }}
+    >
       <Menu.Item name="home">
         <Header size="large" as={Link} to="/">
-          NorthCoders{" "}
+          NorthCoders
         </Header>
       </Menu.Item>
 

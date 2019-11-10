@@ -21,13 +21,10 @@ export default function Home() {
           alt="typewriter / credit: https://unsplash.com/@florianklauer"
           fluid
         />
-
+        >
         <Container id="stage-caption">
-          <h1>Northcoders Fresh News</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            unde tenetur dolorum
-          </p>
+          <h1>Welcome to Northcoders, Fresh News</h1>
+          <p>Ideas and perspectives you won’t find anywhere else</p>
 
           <Modal trigger={<Button color="violet">Latest Articles</Button>}>
             <Modal.Header>JessJelly</Modal.Header>
@@ -36,14 +33,14 @@ export default function Home() {
               <Modal.Description>
                 <Header>It's Great to having You back! </Header>
                 <p>
-
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                  praesentium maiores quasi soluta quia suscipit rerum quidem
-                  fuga repellendus ut esse exercitationem.
+                  With the power of the network, different ways to engage with
+                  stories, and the ability to follow your favorite topics,
+                  writers, and publications, you’re in control of your reading
+                  experience.
                 </p>
                 <p>Progress to Articles Pages</p>
                 <Button inverted color="violet" as={Link} to="articles">
-                Articles
+                  Articles
                 </Button>
               </Modal.Description>
             </Modal.Content>
@@ -68,34 +65,37 @@ export default function Home() {
               <h4>Watch this</h4>
               <h2>Feel the vibe of Northcoders Bootcamp </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Pariatur assumenda veritatis quasi sunt.
+                "It’s such an amazing community that the fear of not fitting in
+                just goes. You will fit in no matter who you are. Northcoders
+                graduate Nick talks about his time with us before becoming a
+                junior developer.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Corporis, officiis, iusto. Quis, esse ab reiciendis, veritatis
-                consequuntur illum eveniet aliquid accusantium distinctio odit
-                nobis quidem laboriosam error nihil nulla voluptas.
+                The advice given before the course was very helpful. Having
+                never worked in the tech industry before, I didn’t know what to
+                expect from interviews/opportunities etc. but was given thorough
+                advice on the topics
               </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Container>
 
-      {/* <Container fluid style={{ margin: 50 }}> */}
       <Grid stackable className="feature-dark" style={{ padding: 50 }}>
         <Grid.Column width={9}>
           <h4>Build Your Dream</h4>
-          <h2>Time built to perfection ...</h2>
+          <h2>How To Be a Great Pair Programmer</h2>
           <p className="lead">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil
-            rerum, reiciendis tenetur earum error?
+            Often, you develop your hard skills in isolation. You spend hours
+            sitting alone, working on projects, and learning more.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
-            aut voluptatem ipsa iste consectetur excepturi quod libero hic alias
-            magni veritatis tempore ab, voluptatum, placeat. Aut quis, alias!
-            Accusamus, reiciendis.
+            Becoming a great software or web developer requires both programing
+            and soft skills; pure coding skill will only get you so far. If
+            you’ve been studying relentlessly, adding to your skills daily, and
+            doing everything you can to learn more — yet still not achieving
+            that next career step — then it might be your soft skills are to
+            blame.
           </p>
         </Grid.Column>
         <Grid.Column width={7}>
@@ -105,9 +105,6 @@ export default function Home() {
           />
         </Grid.Column>
       </Grid>
-      {/* </Container> */}
-
-      
     </React.Fragment>
   );
 }

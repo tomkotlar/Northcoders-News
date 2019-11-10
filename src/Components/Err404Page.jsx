@@ -4,7 +4,6 @@ import err404Page from "../Img/err404page.jpg";
 import { Image, Header } from "semantic-ui-react";
 
 export default function Err404Page(props) {
-  // if (!props.err) return <img src={err404Page} alt="err page/ www.freepik.com"/>
   return (
     <div>
       {props.err}
