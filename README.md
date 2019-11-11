@@ -18,12 +18,21 @@ Clone this repo:
 
 ```bash
 git clone https://github.com/tomkotlar/Northcoders-News.git
-
 cd Northcoders-News
+
+```
+
+Install dependencies: 
+
+```bash
 npm install 
 npm start [http://localhost:3000](http://localhost:3000) to view it in the browser
 
 ```
+
+
+
+
 
 On GitHub create your own **public** repository for your project. **Make sure NOT to initialise it with a README or .gitignore.**
 
