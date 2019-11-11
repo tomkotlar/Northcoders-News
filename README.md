@@ -5,7 +5,7 @@
 The front-end aplication is deployed at Netlify  [Northcoders - News](https://tomas-news.netlify.com)
 
 
-## `Instructions`
+## Instructions
 
 On GitHub create your own **public** repository for your project. **Make sure NOT to initialise it with a README or .gitignore.**
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
@@ -28,10 +28,8 @@ Install dependencies:
 npm install 
 
 ```
-[React](https://reactjs.org) <br />
-[Axios](https://www.npmjs.com/package/axios)<br />
-[Reach-Router](https://www.npmjs.com/package/@reach/router)<br />
-[Semantic Ui for React](https://www.npmjs.com/package/semantic-ui-react)<br />
+[React](https://reactjs.org) | [Axios](https://www.npmjs.com/package/axios) | 
+[Reach/Router](https://www.npmjs.com/package/@reach/router) | [Semantic Ui for React](https://www.npmjs.com/package/semantic-ui-react)<br />
 
 
 Run Your App locally: 
