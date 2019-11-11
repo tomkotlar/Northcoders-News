@@ -28,6 +28,7 @@ Install dependencies:
 npm install 
 
 ```
+You will install:
 [React](https://reactjs.org) | [Axios](https://www.npmjs.com/package/axios) | 
 [Reach/Router](https://www.npmjs.com/package/@reach/router) | [Semantic Ui for React](https://www.npmjs.com/package/semantic-ui-react)<br />
 
@@ -38,8 +39,9 @@ Run Your App locally:
 npm start
 
 ```
+This will run the app in development mode. It opens http://localhost:3000 in the browser . The page will reload if you make edits.
 
-### - User stories/actions
+## - User stories/actions
 - view a list of all articles.
 - view a page for each topic with a list of related articles.
 - view an individual article.
@@ -50,6 +52,9 @@ npm start
 - vote on an article and immediately see the change.
 
 
+## Api 
+Back-End repo is hosted on Heroku [Northcoders - News - Api](https://northcoder-news2019.herokuapp.com/api/)<br />
+Git repo [Northcoders - News - Git](https://github.com/tomkotlar/nc-news_second.git)<br />
 
 
 
