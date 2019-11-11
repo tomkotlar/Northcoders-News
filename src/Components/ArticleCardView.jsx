@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import { Item, Label, Icon } from "semantic-ui-react";
-import ImageCanvas1 from '../Img/ImageCanvas1.png'
+import imagePlace from '../Img/imagePlace.png'
 
 
 export default function ArticleCardView(props) {
@@ -23,7 +23,7 @@ export default function ArticleCardView(props) {
             as={Link}
             to={`/articles/${props.article.article_id}`}
             size="tiny"
-            src={ImageCanvas1}
+            src={imagePlace}
           />
 
           <Item.Content style={{ paddingLeft: "20px" }}>

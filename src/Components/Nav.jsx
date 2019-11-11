@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../Utils/api";
 import { Link } from "@reach/router";
-import Err404Page from "./Err404Page";
 import { Menu } from "semantic-ui-react";
 
 export default class Nav extends Component {
@@ -13,9 +12,9 @@ export default class Nav extends Component {
 
   fetchTopics = () => {
     api.getTopics().then(items => {
-      this.setState({ topics: items , isLoading: false});
+      this.setState({ topics: items , });
     })
-    .catch(err => this.setState({ err }));
+     .catch(err => this.setState({ err }));
   };
 
   componentDidMount() {
@@ -23,9 +22,7 @@ export default class Nav extends Component {
   }
 
   render() {
-    const { topics, err } = this.state;
-    if (!topics.length) return "loading...";
-    if (err) return <Err404Page err={err} />;
+    const { topics } = this.state;
   
     return (
       <Menu
