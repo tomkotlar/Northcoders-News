@@ -1,6 +1,6 @@
 
 
-# Northcoders-News
+# :rocket: Northcoders-News
 
 The front-end aplication is deployed at Netlify  [Northcoders - News](https://tomas-news.netlify.com)
 
@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### - Setting up your own repository
 
-Clone this repo:
+:dvd: Clone this repo:
 
 ```bash
 git clone https://github.com/tomkotlar/Northcoders-News.git
@@ -22,7 +22,7 @@ cd Northcoders-News
 
 ```
 
-Install dependencies: 
+:cd: Install dependencies: 
 
 ```bash
 npm install 
@@ -33,7 +33,7 @@ You will install:
 [Reach/Router](https://www.npmjs.com/package/@reach/router) | [Semantic Ui for React](https://www.npmjs.com/package/semantic-ui-react)<br />
 
 
-Run Your App locally: 
+:computer: Run Your App locally: 
 
 ```bash
 npm start
@@ -41,7 +41,7 @@ npm start
 ```
 This will run the app in development mode. It opens http://localhost:3000 in the browser . The page will reload if you make edits.
 
-## - User stories/actions
+## User stories/actions
 - view a list of all articles.
 - view a page for each topic with a list of related articles.
 - view an individual article.
@@ -53,8 +53,10 @@ This will run the app in development mode. It opens http://localhost:3000 in the
 
 
 ## Api 
-Back-End repo is hosted on Heroku [Northcoders - News - Api](https://northcoder-news2019.herokuapp.com/api/)<br />
-Git repo [Northcoders - News - Git](https://github.com/tomkotlar/nc-news_second.git)<br />
+:newspaper: Back-End repo is hosted on Heroku [Northcoders - News - Api](https://northcoder-news2019.herokuapp.com/api/)<br />
+:file_folder: Git repo  [Northcoders - News - Git](https://github.com/tomkotlar/nc-news_second.git)<br />
 
+
+For more info  :email:  t.kotlar@yahoo.com
 
 
