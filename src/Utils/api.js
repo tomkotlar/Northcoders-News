@@ -38,7 +38,6 @@ export const deleteComment = (id) => {
 }
 
 export const patchVote = (id, inc_votes, type) => {
-  console.log(id, inc_votes)
   return request
     .patch(`/${type}/${id}`, { inc_votes })
     .then(response => response.data.comment)

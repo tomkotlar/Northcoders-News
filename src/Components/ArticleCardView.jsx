@@ -14,7 +14,8 @@ export default function ArticleCardView(props) {
           maxWidth: "700px",
           margin: "40px",
           marginLeft: "auto",
-          marginRight: "auto"
+          marginRight: "auto",
+          paddingBottom: '40px'
         }}
       >
         <Item>

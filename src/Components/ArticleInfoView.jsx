@@ -137,11 +137,12 @@ export default function ArticleInfoView(props) {
             content={button}
             size="medium"
             onClick={() => props.handleClick()}
-          />
+            />
+          
         </Grid.Column>
       </Grid>
 
-      {viewComments && <Comments article_id={props.article_id} />}
+      {viewComments && <Comments article_id={props.singleArticle.article_id} />}
     </div>
   );
 }

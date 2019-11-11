@@ -6,6 +6,8 @@ import Nav from "./Nav";
 
 import ArticleInfoView from "./ArticleInfoView";
 
+
+
 export default class ArticleInfo extends Component {
   state = {
     singleArticle: {},
@@ -37,9 +39,9 @@ export default class ArticleInfo extends Component {
   };
 
   render() {
-    const { singleArticle, viewComments, err } = this.state;
+    const { singleArticle, viewComments, err} = this.state;
     if (err) return <Err404Page />;
-
+  
     return (
       <React.Fragment>
         <Nav />
@@ -49,6 +51,8 @@ export default class ArticleInfo extends Component {
           handleClick={this.handleClick}
           err={err}
         />
+
+
       </React.Fragment>
     );
   }

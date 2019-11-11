@@ -1,29 +1,4 @@
-/* .App {
-  text-align: center;
-  
-}
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
-
-} */
 
 img {
   max-width: 100%;
@@ -63,13 +38,6 @@ img {
 	overflow: hidden;
 }
 
-/* .feature-content img {
-  margin-bottom: -2rem;
-
-} */
-
-
-
 .feature-dark {
 	background: #262F36;
   color: white;
@@ -79,19 +47,6 @@ img {
 .feature-dark h2 {
 	color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and ( min-width : 900px) {
 

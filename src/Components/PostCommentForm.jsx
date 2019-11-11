@@ -11,9 +11,7 @@ export default class PostCommentForm extends Component {
   handleChange = event => {
     const { value, name } = event.target;
     this.setState({ [name]: value });
-    // [name] - is the name of input field you updating
-    // value  -  is the value whis is updated from the state
-    // in react docs they naming the input field as value which is updated
+  
   };
 
   handleFormSubmit = event => {
@@ -23,8 +21,6 @@ export default class PostCommentForm extends Component {
       this.props.addForm(response);
     });
     event.preventDefault();
-    // console.log(response))
-
     this.setState({ body: "" });
   };
 

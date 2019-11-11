@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
 import * as api from "../Utils/api";
 import SortArticles from "./SortArticles";
 import SingleArticleView from "./SingleArticleView";
 import Err404Page from "./Err404Page";
-
 import ArticleCardView from "./ArticleCardView";
 
 export default class ArticleCard extends Component {
@@ -33,7 +31,6 @@ export default class ArticleCard extends Component {
   }
 
   handleChange = event => {
-    console.dir(event);
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -47,7 +44,8 @@ export default class ArticleCard extends Component {
 
   render() {
     const { articles, order_by, sort_by, err } = this.state;
-    if (!articles.length) return "loadning....";
+    if (!articles.length ) return "loading....";
+    
     if (err) return <Err404Page err={err} />;
     return (
       <div>
@@ -60,7 +58,7 @@ export default class ArticleCard extends Component {
         />
 
         {this.state.articles.map((element, i) => (
-          <ArticleCardView article={element}  key={element.article_id}/>
+          <ArticleCardView article={element} key={element.article_id} />
         ))}
       </div>
     );

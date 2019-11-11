@@ -17,7 +17,6 @@ export default class Vote extends Component {
 
   render() {
     const { votes } = this.props;
-    console.log(this.state.likes);
     return (
       <React.Fragment>
         <Label

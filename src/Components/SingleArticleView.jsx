@@ -34,7 +34,6 @@ export default function SingleArticleView(props) {
               <span>{props.article.author}</span>
             </Item.Meta>
             <Item.Description>
-              {" "}
               {props.article.body.slice(0, 70) + "..."}
             </Item.Description>
             <Item.Extra>
