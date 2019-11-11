@@ -1,10 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Northcoders-News
 
-### `npm start`
+The front-end aplication is deployed at Netlify  [Northcoders - News](https://tomas-news.netlify.com)
+
+
+### `Instructions`
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+
+
+## Step 1 - Setting up your own repository
+
+Clone this repo:
+
+```bash
+git clone https://github.com/tomkotlar/Northcoders-News.git
+
+cd Northcoders-News
+npm install 
+npm start [http://localhost:3000](http://localhost:3000) to view it in the browser
+
+```
+
+On GitHub create your own **public** repository for your project. **Make sure NOT to initialise it with a README or .gitignore.**
+
+
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
